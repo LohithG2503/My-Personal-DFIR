@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360">
+  <style>
+    .bg { fill: #f7f9fc; }
+    .node { fill: #ffffff; stroke: #2b6cb0; stroke-width: 2; rx: 8; }
+    .host { fill: #ffe8a3; stroke: #c17a00; }
+    .text { font-family: "Segoe UI", Arial, sans-serif; font-size: 14px; fill: #0b2447; }
+    .ip { font-size: 12px; fill: #234e52; }
+    .line { stroke: #2b6cb0; stroke-width: 2; }
+  </style>
+  <rect class="bg" width="100%" height="100%" />
+
+  <!-- Host / vboxnet0 -->
+  <g transform="translate(300,20)">
+    <rect x="0" y="0" width="200" height="48" class="node host" rx="6"/>
+    <text x="100" y="28" text-anchor="middle" class="text">Host: vboxnet0</text>
+    <text x="100" y="43" text-anchor="middle" class="ip">192.168.56.1</text>
+  </g>
+
+  <!-- Analyst VM -->
+  <g transform="translate(60,120)">
+    <rect x="0" y="0" width="200" height="84" class="node"/>
+    <text x="100" y="28" text-anchor="middle" class="text">ANALYST-VM</text>
+    <text x="100" y="52" text-anchor="middle" class="ip">SIFT Workstation</text>
+    <text x="100" y="68" text-anchor="middle" class="ip">192.168.56.101</text>
+  </g>
+
+  <!-- Victim VM -->
+  <g transform="translate(300,120)">
+    <rect x="0" y="0" width="200" height="84" class="node"/>
+    <text x="100" y="28" text-anchor="middle" class="text">VICTIM-VM</text>
+    <text x="100" y="52" text-anchor="middle" class="ip">Windows 11 LTSC</text>
+    <text x="100" y="68" text-anchor="middle" class="ip">192.168.56.102</text>
+  </g>
+
+  <!-- Logger VM -->
+  <g transform="translate(540,120)">
+    <rect x="0" y="0" width="200" height="84" class="node"/>
+    <text x="100" y="28" text-anchor="middle" class="text">LOGGER-VM</text>
+    <text x="100" y="52" text-anchor="middle" class="ip">Ubuntu Server / syslog-ng</text>
+    <text x="100" y="68" text-anchor="middle" class="ip">192.168.56.103</text>
+  </g>
+
+  <!-- Connections -->
+  <line x1="400" y1="48" x2="160" y2="120" class="line" />
+  <line x1="400" y1="48" x2="400" y2="120" class="line" />
+  <line x1="400" y1="48" x2="640" y2="120" class="line" />
+
+  <!-- Optional future Kali VM marker -->
+  <g transform="translate(300,230)">
+    <rect x="0" y="0" width="200" height="64" fill="#f0f4f8" stroke="#94a3b8" rx="6"/>
+    <text x="100" y="32" text-anchor="middle" class="ip">Planned: KALI (192.168.56.104)</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="16" y="344" class="ip">Diagram: VirtualBox Host-Only network `192.168.56.0/24` — Host: `192.168.56.1`</text>
+</svg>
